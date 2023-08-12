@@ -43,6 +43,7 @@ export function createStorage(key) {
       const orders = []
 
       ordersFB.forEach((doc) => {
+        console.log(doc)
           orders.unshift({
             id: doc.id,
             number: doc.data().number,
