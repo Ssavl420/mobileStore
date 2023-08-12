@@ -38,15 +38,15 @@ export class Controller {
       // console.log('controller.init')
       console.warn('activePage -', activePage)
 
-      if (activePage == '/' || activePage == '/index.html') this.model.readData()
+      if (activePage == '/mobileStore/' || activePage == '/mobileStore/index.html') this.model.readData()
 
-      if (activePage == '/product%D0%A1ard.html') this.model.readProductData()
+      if (activePage == '/mobileStore/product%D0%A1ard.html') this.model.readProductData()
 
-      if (activePage == '/shopping%D0%A1art.html') this.model.readCartData()
+      if (activePage == '/mobileStore/shopping%D0%A1art.html') this.model.readCartData()
 
-      if (activePage == '/checkout.html') this.model.readCheckoutData()
+      if (activePage == '/mobileStore/checkout.html') this.model.readCheckoutData()
 
-      if (activePage == '/order.html') this.model.readOrderData()
+      if (activePage == '/mobileStore/order.html') this.model.readOrderData()
    }
 
    handleModelGoods = (listOfGoods) => {
