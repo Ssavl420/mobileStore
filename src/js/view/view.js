@@ -186,23 +186,23 @@ export class View {
       productRatingWrap.appendChild(productRatingStars)
 
       let ratingStar1 = document.createElement('img')
-      ratingStar1.setAttribute('src', '/star.70726630.svg')
+      ratingStar1.setAttribute('src', '../star.70726630.svg')
       productRatingStars.appendChild(ratingStar1)
 
       let ratingStar2 = document.createElement('img')
-      ratingStar2.setAttribute('src', '/star.70726630.svg')
+      ratingStar2.setAttribute('src', '../star.70726630.svg')
       productRatingStars.appendChild(ratingStar2)
 
       let ratingStar3 = document.createElement('img')
-      ratingStar3.setAttribute('src', '/star.70726630.svg')
+      ratingStar3.setAttribute('src', '../star.70726630.svg')
       productRatingStars.appendChild(ratingStar3)
 
       let ratingStar4 = document.createElement('img')
-      ratingStar4.setAttribute('src', '/star.70726630.svg')
+      ratingStar4.setAttribute('src', '../star.70726630.svg')
       productRatingStars.appendChild(ratingStar4)
 
       let ratingStar5 = document.createElement('img')
-      ratingStar5.setAttribute('src', '/star50.310d6162.svg')
+      ratingStar5.setAttribute('src', '../star50.310d6162.svg')
       productRatingStars.appendChild(ratingStar5)
 
       let ratingText = document.createElement('p')
@@ -436,23 +436,23 @@ export class View {
          productRating.appendChild(starsWrap)
 
          let ratingStar1 = document.createElement('img')
-         ratingStar1.setAttribute('src', '/star.70726630.svg')
+         ratingStar1.setAttribute('src', './star.70726630.svg')
          starsWrap.appendChild(ratingStar1)
    
          let ratingStar2 = document.createElement('img')
-         ratingStar2.setAttribute('src', '/star.70726630.svg')
+         ratingStar2.setAttribute('src', './star.70726630.svg')
          starsWrap.appendChild(ratingStar2)
    
          let ratingStar3 = document.createElement('img')
-         ratingStar3.setAttribute('src', '/star.70726630.svg')
+         ratingStar3.setAttribute('src', './star.70726630.svg')
          starsWrap.appendChild(ratingStar3)
    
          let ratingStar4 = document.createElement('img')
-         ratingStar4.setAttribute('src', '/star.70726630.svg')
+         ratingStar4.setAttribute('src', './star.70726630.svg')
          starsWrap.appendChild(ratingStar4)
    
          let ratingStar5 = document.createElement('img')
-         ratingStar5.setAttribute('src', '/star50.310d6162.svg')
+         ratingStar5.setAttribute('src', './star50.310d6162.svg')
          starsWrap.appendChild(ratingStar5)
    
          let ratingText = document.createElement('p')
@@ -580,23 +580,23 @@ export class View {
          productRating.appendChild(starsWrap)
 
          let ratingStar1 = document.createElement('img')
-         ratingStar1.setAttribute('src', '/star.70726630.svg')
+         ratingStar1.setAttribute('src', './star.70726630.svg')
          starsWrap.appendChild(ratingStar1)
    
          let ratingStar2 = document.createElement('img')
-         ratingStar2.setAttribute('src', '/star.70726630.svg')
+         ratingStar2.setAttribute('src', './star.70726630.svg')
          starsWrap.appendChild(ratingStar2)
    
          let ratingStar3 = document.createElement('img')
-         ratingStar3.setAttribute('src', '/star.70726630.svg')
+         ratingStar3.setAttribute('src', './star.70726630.svg')
          starsWrap.appendChild(ratingStar3)
    
          let ratingStar4 = document.createElement('img')
-         ratingStar4.setAttribute('src', '/star.70726630.svg')
+         ratingStar4.setAttribute('src', './star.70726630.svg')
          starsWrap.appendChild(ratingStar4)
    
          let ratingStar5 = document.createElement('img')
-         ratingStar5.setAttribute('src', '/star50.310d6162.svg')
+         ratingStar5.setAttribute('src', './star50.310d6162.svg')
          starsWrap.appendChild(ratingStar5)
    
          let ratingText = document.createElement('p')
