@@ -516,7 +516,7 @@ export class View {
          console.error('Нет данных для рендера')
    
          document.querySelector('.order__section-checkout').style.display = 'none'
-         if (activePage == '/order.html') document.querySelector('.order__title__wrap').style.display = 'none'
+         if (activePage == '/mobileStore/order.html') document.querySelector('.order__title__wrap').style.display = 'none'
          let wrap = document.querySelectorAll('.cart__wrap-checkout')
 
          if (wrap.length > 1) {
@@ -528,8 +528,8 @@ export class View {
    
          let error = document.createElement('p')
          error.className = 'error'
-         if (activePage == '/order.html') error.innerHTML = 'Страница не найдена'
-         if (activePage !== '/order.html') error.innerHTML = 'В заказе нет товаров'
+         if (activePage == '/mobileStore/order.html') error.innerHTML = 'Страница не найдена'
+         if (activePage !== '/mobileStore/order.html') error.innerHTML = 'В заказе нет товаров'
          document.querySelector('.checkout__body').appendChild(error)
 
          return
@@ -539,8 +539,8 @@ export class View {
 
       cartLS.forEach(element => {
          let item = document.createElement('li')
-         if (activePage !== '/order.html') item.className = 'basket__item'
-         if (activePage == '/order.html') item.className = 'basket__item order'
+         if (activePage !== '/mobileStore/order.html') item.className = 'basket__item'
+         if (activePage == '/mobileStore/order.html') item.className = 'basket__item order'
          this.basketItems.appendChild(item)
 
          let itemImageWrap = document.createElement('div')
