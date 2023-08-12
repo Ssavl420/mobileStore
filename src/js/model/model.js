@@ -111,19 +111,15 @@ export class Model {
       const orders = JSON.parse(localStorage.getItem('orders'))
       const cartLS = JSON.parse(localStorage.getItem('cart'))
 
-      // console.log(id)
-      // console.log(orders)
-
       for (let index = 0; index < orders.length; index++) {
          const element = orders[index];
          
          if (element.number == id) {
             this.storageOrder.pullOrder().then((orders) => {
-               console.log('.model', orders)
                for (let index = 0; index < orders.length; index++) {
                   const element = orders[index];
                   if (element.number == id) {
-                     // console.log(element)
+
 
                      if (cartLS !== null) localStorage.setItem('cartHistory', JSON.stringify(cartLS))
 
