@@ -73,7 +73,7 @@ export function createStorage(key) {
       if (id == null) {
         // console.log('Stop')
         return} 
-
+      let product
       const q = query(collection(this.db, this.key));
 
       const querySnapshot = await getDocs(q);
