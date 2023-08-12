@@ -4,7 +4,7 @@ export const ORDERS_STORAGE_KEY = 'orders';
 export const activePage = window.location.pathname;
 
 export const deliveryCost = '6.99';
-export const linkToOrder = '/order.html';
+export const linkToOrder = '/mobileStore/order.html';
 
 export const firebaseConfig = {
    apiKey: "AIzaSyBdlsYdifAS2lr9u-LOiBRxWyH_5ju9sNg",
