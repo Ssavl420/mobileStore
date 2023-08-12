@@ -104,11 +104,11 @@ export class View {
 
       if (methodPayLS == 'Card') {         
          methodText.innerHTML = 'Оплата картой при получении'
-         methodImage.setAttribute('src', '/pay_card.e9ec8a00.svg')
+         methodImage.setAttribute('src', './pay_card.e9ec8a00.svg')
       }
       if (methodPayLS == 'Cash') {
          methodText.innerHTML = 'Оплата наличными при получении'
-         methodImage.setAttribute('src', '/pay_cash.58bc8e80.png')
+         methodImage.setAttribute('src', './pay_cash.58bc8e80.png')
       }
    }
 
