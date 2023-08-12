@@ -43,7 +43,7 @@ export function createStorage(key) {
       const orders = []
 
       ordersFB.forEach((doc) => {
-        console.log(doc.data())
+        console.log(doc.data().cost.currency)
           orders.unshift({
             id: doc.id,
             number: doc.data().number,
