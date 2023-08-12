@@ -375,7 +375,7 @@ export class View {
    renderBigCart = (cartLS) => {
       // console.log('view.renderBigCart')
 
-      if (!cartLS) {
+      if (!cartLS || cartLS.length < 1) {
          console.error('Нет данных для рендера')
    
          document.querySelector('.content').style.borderRight = 'none'
