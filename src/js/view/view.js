@@ -104,11 +104,11 @@ export class View {
 
       if (methodPayLS == 'Card') {         
          methodText.innerHTML = 'Оплата картой при получении'
-         methodImage.setAttribute('src', './pay_card.e9ec8a00.svg')
+         methodImage.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/pay_card.svg?alt=media&token=c2bfc1a1-cb09-494d-b6ce-f8325d8fe86f')
       }
       if (methodPayLS == 'Cash') {
          methodText.innerHTML = 'Оплата наличными при получении'
-         methodImage.setAttribute('src', './pay_cash.58bc8e80.png')
+         methodImage.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/pay_cash.png?alt=media&token=5215960e-7347-42b5-aefd-9d2e92ce1438')
       }
    }
 
@@ -186,23 +186,23 @@ export class View {
       productRatingWrap.appendChild(productRatingStars)
 
       let ratingStar1 = document.createElement('img')
-      ratingStar1.setAttribute('src', './star.70726630.svg')
+      ratingStar1.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
       productRatingStars.appendChild(ratingStar1)
 
       let ratingStar2 = document.createElement('img')
-      ratingStar2.setAttribute('src', './star.70726630.svg')
+      ratingStar2.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
       productRatingStars.appendChild(ratingStar2)
 
       let ratingStar3 = document.createElement('img')
-      ratingStar3.setAttribute('src', './star.70726630.svg')
+      ratingStar3.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
       productRatingStars.appendChild(ratingStar3)
 
       let ratingStar4 = document.createElement('img')
-      ratingStar4.setAttribute('src', './star.70726630.svg')
+      ratingStar4.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
       productRatingStars.appendChild(ratingStar4)
 
       let ratingStar5 = document.createElement('img')
-      ratingStar5.setAttribute('src', './star50.310d6162.svg')
+      ratingStar5.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star50.svg?alt=media&token=13c8a349-f279-4878-96f3-1a9f3d89aebd')
       productRatingStars.appendChild(ratingStar5)
 
       let ratingText = document.createElement('p')
@@ -436,23 +436,23 @@ export class View {
          productRating.appendChild(starsWrap)
 
          let ratingStar1 = document.createElement('img')
-         ratingStar1.setAttribute('src', './star.70726630.svg')
+         ratingStar1.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
          starsWrap.appendChild(ratingStar1)
    
          let ratingStar2 = document.createElement('img')
-         ratingStar2.setAttribute('src', './star.70726630.svg')
+         ratingStar2.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
          starsWrap.appendChild(ratingStar2)
    
          let ratingStar3 = document.createElement('img')
-         ratingStar3.setAttribute('src', './star.70726630.svg')
+         ratingStar3.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
          starsWrap.appendChild(ratingStar3)
    
          let ratingStar4 = document.createElement('img')
-         ratingStar4.setAttribute('src', './star.70726630.svg')
+         ratingStar4.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
          starsWrap.appendChild(ratingStar4)
    
          let ratingStar5 = document.createElement('img')
-         ratingStar5.setAttribute('src', './star50.310d6162.svg')
+         ratingStar5.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star50.svg?alt=media&token=13c8a349-f279-4878-96f3-1a9f3d89aebd')
          starsWrap.appendChild(ratingStar5)
    
          let ratingText = document.createElement('p')
@@ -580,23 +580,23 @@ export class View {
          productRating.appendChild(starsWrap)
 
          let ratingStar1 = document.createElement('img')
-         ratingStar1.setAttribute('src', './star.70726630.svg')
+         ratingStar1.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
          starsWrap.appendChild(ratingStar1)
    
          let ratingStar2 = document.createElement('img')
-         ratingStar2.setAttribute('src', './star.70726630.svg')
+         ratingStar2.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
          starsWrap.appendChild(ratingStar2)
    
          let ratingStar3 = document.createElement('img')
-         ratingStar3.setAttribute('src', './star.70726630.svg')
+         ratingStar3.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
          starsWrap.appendChild(ratingStar3)
    
          let ratingStar4 = document.createElement('img')
-         ratingStar4.setAttribute('src', './star.70726630.svg')
+         ratingStar4.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star.svg?alt=media&token=100cce0e-f25c-4a0e-b7d2-2672c86084e7')
          starsWrap.appendChild(ratingStar4)
    
          let ratingStar5 = document.createElement('img')
-         ratingStar5.setAttribute('src', './star50.310d6162.svg')
+         ratingStar5.setAttribute('src', 'https://firebasestorage.googleapis.com/v0/b/onlinestore-ded5f.appspot.com/o/star50.svg?alt=media&token=13c8a349-f279-4878-96f3-1a9f3d89aebd')
          starsWrap.appendChild(ratingStar5)
    
          let ratingText = document.createElement('p')
