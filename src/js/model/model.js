@@ -318,7 +318,7 @@ export class Model {
    addProductToCart(id) {
       // console.log('model.addProductToCart', id)
       
-      if ((activePage == '/product%D0%A1ard.html')) {
+      if ((activePage == '/mobileStore/product%D0%A1ard.html')) {
          this.storage.pull().then((listOfGoods) => {
             this.listOfGoods = listOfGoods;
             this.listOfGoods.forEach(product => {
