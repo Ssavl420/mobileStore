@@ -63,6 +63,7 @@ export function createStorage(key) {
             goods: [JSON.parse(doc.data().goods)]
           }) 
       });
+      console.log('storage', orders)
       return  orders;
     },
     readProductData: async function(id) {

@@ -119,7 +119,7 @@ export class Model {
          
          if (element.number == id) {
             this.storageOrder.pullOrder().then((orders) => {
-
+               console.log('.model', orders)
                for (let index = 0; index < orders.length; index++) {
                   const element = orders[index];
                   if (element.number == id) {
