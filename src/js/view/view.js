@@ -359,12 +359,12 @@ export class View {
       });
    }
 
-   renderCartSum = (cartSum) => {
+   renderCartSum = (Sum) => {
       // console.log('view.renderCartSum')
 
       let cartSum = document.querySelector('#sum')
 
-      cartSum.innerHTML = `${cartSum}`
+      cartSum.innerHTML = `${Sum}`
    }
 
    renderCartCheckoutSum = (sum) => {
