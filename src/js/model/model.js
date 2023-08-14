@@ -29,11 +29,16 @@ export class Model {
    }
 
    readData() {
-      // console.log('model.readData')
+      console.log('model.readData')
 
       const cartLS = JSON.parse(localStorage.getItem('cart'))
       const cartHistoryLS = JSON.parse(localStorage.getItem('cartHistory'))
       const ordersFromLS = JSON.parse(localStorage.getItem('orders'))
+
+      this.storage.pull().then((listOfGoods) => {
+         this.onGoodsFromData(listOfGoods)
+         this.listOfGoods = listOfGoods;
+      })
 
       if (cartHistoryLS !== null) {
          localStorage.setItem('cart', JSON.stringify(cartHistoryLS))
@@ -47,11 +52,6 @@ export class Model {
          this.cart = cartLS
          this.onCart(cartLS)
       }
-
-      this.storage.pull().then((listOfGoods) => {
-         this.onGoodsFromData(listOfGoods)
-         this.listOfGoods = listOfGoods;
-      })
 
       this.onOrdersFromData(ordersFromLS)
       console.log(ordersFromLS)

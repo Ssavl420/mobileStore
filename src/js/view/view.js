@@ -242,7 +242,7 @@ export class View {
    }
 
    renderProducts = (listOfGoods) => {
-      // console.log('view.renderProducts')
+      console.log('view.renderProducts')
 
       this.container.innerHTML = ''
 
@@ -380,7 +380,7 @@ export class View {
    }
 
    renderCart = (cartLS) => {
-      // console.log('view.renderCart', cartLS)
+      console.log('view.renderCart', cartLS)
 
       let cartItems = document.querySelector('#cartItems')
       cartItems.innerHTML = ''
@@ -417,7 +417,7 @@ export class View {
 
 
    renderBigCart = (cartLS) => {
-      // console.log('view.renderBigCart')
+      console.log('view.renderBigCart')
 
       this.container.innerHTML = ''
 
@@ -770,7 +770,7 @@ export class View {
    }
 
    renderOrderNumber(number) {
-      // console.log('view.renderOrderNumber')
+      console.log('view.renderOrderNumber')
 
       const orderNumber = document.querySelector('#orderNumber')
       orderNumber.innerText = `${number}`

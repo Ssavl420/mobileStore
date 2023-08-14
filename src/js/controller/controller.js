@@ -56,7 +56,7 @@ export class Controller {
    }
 
    handleModelGoods = (listOfGoods) => {
-      // console.log('controller.handleModelGoods')
+      console.log('controller.handleModelGoods')
 
       this.view.renderProducts(listOfGoods)
    }
@@ -68,7 +68,7 @@ export class Controller {
    }
 
    handleReadCart = (cartLS) => {
-      // console.log('controller.handleReadCart', cartLS)
+      console.log('controller.handleReadCart', cartLS)
 
       this.view.renderCart(cartLS)
    }
@@ -160,7 +160,7 @@ export class Controller {
    }
 
    handleOrderNumber = (number) => {
-      // console.log('controller.handleOrderNumber')
+      console.log('controller.handleOrderNumber')
 
       this.view.renderOrderNumber(number)
    }
