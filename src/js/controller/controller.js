@@ -33,7 +33,8 @@ export class Controller {
          onCheckForms: this.handleCheckForms,
          onCheckDeliveryData: this.handleCheckDeliveryData,
          onOrderFromFB: this.handleOrderFromFB,
-         onCheckCartData: this.handleCheckCartData
+         onCheckCartData: this.handleCheckCartData,
+         linkToCart: this.handleToCart,
       });
    }
    init() {
@@ -210,5 +211,9 @@ export class Controller {
    handleCheckCartData = () => {
 
       this.model.checkCartData()
+   }
+
+   handleToCart = () => {
+      this.model.linkToCart()
    }
 }

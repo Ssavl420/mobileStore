@@ -1,7 +1,7 @@
 import { deliveryCost, activePage } from "../variables/variables.js"
 
 export class View {
-   constructor({ onReadProductData, onAddProductToCart, onHome, onPlusQuantity, onMinusQuantity, onChangeMethodPay, onChangeDelivery, onCheckForms, onCheckDeliveryData, onOrderFromFB, onCheckCartData }) {
+   constructor({ onReadProductData, onAddProductToCart, onHome, onPlusQuantity, onMinusQuantity, onChangeMethodPay, onChangeDelivery, onCheckForms, onCheckDeliveryData, onOrderFromFB, onCheckCartData, linkToCart }) {
       this.onReadProductData = onReadProductData
       this.onAddProductToCart = onAddProductToCart
       this.onPlusQuantity = onPlusQuantity
@@ -13,6 +13,7 @@ export class View {
       this.onCheckCartData = onCheckCartData
       this.onOrderFromFB = onOrderFromFB
       this.onHome = onHome
+      this.linkToCart = linkToCart
 
       this.popupWrap = document.querySelector('#popup__wrap')
       this.productCardWrap = document.querySelector('#productCardWrap')
@@ -51,7 +52,8 @@ export class View {
       this.payCash = document.querySelector('#payCash')
       this.payFormBtn = document.querySelector('#payForm')
       if (this.payFormBtn) this.payFormBtn.addEventListener('click', this.payForm)
-
+      this.cartBtn = document.querySelector('#cartBtn')
+      if (this.cartBtn) this.cartBtn.addEventListener('click', this.link)
       if (this.btnAddress) this.btnAddress.addEventListener('click', this._openPopup)
       if (this.btnPayment) this.btnPayment.addEventListener('click', this._openPopup)
       if (this.popupWrap) this.popupWrap.addEventListener('click', this._closePopup)
@@ -61,6 +63,10 @@ export class View {
             el.addEventListener("click", this._closePopup);
          }
       }
+   }
+
+   link = () => {
+      this.linkToCart()
    }
 
    renderDelivery = (deliveryProps) => {

@@ -34,14 +34,20 @@ export class Model {
       const cartLS = JSON.parse(localStorage.getItem('cart'))
       const cartHistoryLS = JSON.parse(localStorage.getItem('cartHistory'))
       const ordersFromLS = JSON.parse(localStorage.getItem('orders'))
+      const link = localStorage.getItem('link')
 
-      
+      if (link !== null) {
+         localStorage.removeItem('link')
+         this.checkCartData()
+         return
+      }
 
       this.storage.pull().then((listOfGoods) => {
          this.onGoodsFromData(listOfGoods)
          this.listOfGoods = listOfGoods;
          this.onOrdersFromData(ordersFromLS)
          this.orders = ordersFromLS;
+
          if (cartHistoryLS !== null) {
             localStorage.setItem('cart', JSON.stringify(cartHistoryLS))
             this.cart = cartHistoryLS
@@ -49,11 +55,15 @@ export class Model {
             localStorage.removeItem('cartHistory')
          }
          if (cartLS !== null) {
-            console.log('cartLS !== null', cartLS)
+            
             this.cart = cartLS
             this.onCart(cartLS)
          }
       })
+   }
+
+   linkToCart() {
+      localStorage.setItem('link', 'cart')
    }
 
    readProductData() {
