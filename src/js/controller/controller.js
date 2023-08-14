@@ -23,6 +23,7 @@ export class Controller {
          onChangeBtnText: this.handleChangeBtnText
       });
       this.view = new View({
+         onHome: this.handleToHome,
          onReadProductData: this.handlerSafeProductId,
          onAddProductToCart: this.handleAddToCart,
          onPlusQuantity: this.handlePlusQuantity,
@@ -48,6 +49,10 @@ export class Controller {
       if (activePage == '/mobileStore/checkout.html') this.model.readCheckoutData()
 
       if (activePage == '/mobileStore/order.html') this.model.readOrderData()
+   }
+
+   handleToHome = () => {
+      this.model.readData()
    }
 
    handleModelGoods = (listOfGoods) => {

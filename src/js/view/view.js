@@ -1,7 +1,7 @@
 import { deliveryCost, activePage } from "../variables/variables.js"
 
 export class View {
-   constructor({ onReadProductData, onAddProductToCart, onPlusQuantity, onMinusQuantity, onChangeMethodPay, onChangeDelivery, onCheckForms, onCheckDeliveryData, onOrderFromFB, onCheckCartData }) {
+   constructor({ onReadProductData, onAddProductToCart, onHome, onPlusQuantity, onMinusQuantity, onChangeMethodPay, onChangeDelivery, onCheckForms, onCheckDeliveryData, onOrderFromFB, onCheckCartData }) {
       this.onReadProductData = onReadProductData
       this.onAddProductToCart = onAddProductToCart
       this.onPlusQuantity = onPlusQuantity
@@ -12,10 +12,11 @@ export class View {
       this.onCheckDeliveryData = onCheckDeliveryData
       this.onCheckCartData = onCheckCartData
       this.onOrderFromFB = onOrderFromFB
+      this.onHome = onHome
 
       this.popupWrap = document.querySelector('#popup__wrap')
       this.productCardWrap = document.querySelector('#productCardWrap')
-      this.cartItems = document.querySelector('#cartItems')
+
       this.ordersItems = document.querySelector('#ordersItems')
       this.popupDelivery = document.querySelector('#popup__delivery')
       this.popupPayment = document.querySelector('#popup__payment')
@@ -345,7 +346,8 @@ export class View {
    renderCart = (cartLS) => {
       // console.log('view.renderCart', cartLS)
 
-      this.cartItems.innerHTML = ''
+      let cartItems = document.querySelector('#cartItems')
+      cartItems.innerHTML = ''
 
       cartLS.forEach(product => {
 
@@ -354,7 +356,7 @@ export class View {
          cartItem.setAttribute('id', `${product.id}`)
          cartItem.setAttribute('title', `${product.title}`)
          cartItem.style.backgroundImage = `url(${product.imageURL})`
-         this.cartItems.appendChild(cartItem)
+         cartItems.appendChild(cartItem)
 
       });
    }
@@ -389,9 +391,9 @@ export class View {
       content.className = 'content'
       container.appendChild(content)
 
-      let backBtnLink = document.createElement('a')
+      let backBtnLink = document.createElement('div')
       backBtnLink.className = 'nav__link'
-      backBtnLink.setAttribute('href', '/mobileStore/')
+      backBtnLink.addEventListener('click', this.onHome)
       content.appendChild(backBtnLink)
 
       let btnInnerImg = document.createElement('img')
