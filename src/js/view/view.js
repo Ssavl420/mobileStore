@@ -379,6 +379,7 @@ export class View {
       costSum.innerHTML = `${sum}`
    }
 
+
    renderBigCart = (cartLS) => {
       // console.log('view.renderBigCart')
 
