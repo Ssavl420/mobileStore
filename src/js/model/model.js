@@ -288,6 +288,7 @@ export class Model {
       this.checkCartData()
       const cartLS = JSON.parse(localStorage.getItem('cart'))
       this.onChangeQuantity(cartLS)
+      this.onCartSum(this.calcCartSum())
    }
 
    changeMethodPay(methodPay) {
