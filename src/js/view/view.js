@@ -17,7 +17,7 @@ export class View {
       this.popupWrap = document.querySelector('#popup__wrap')
       this.productCardWrap = document.querySelector('#productCardWrap')
 
-      this.ordersItems = document.querySelector('#ordersItems')
+      this.container = document.querySelector('.container')
       this.popupDelivery = document.querySelector('#popup__delivery')
       this.popupPayment = document.querySelector('#popup__payment')
       this.popupError = document.querySelector('#popup__error')
@@ -25,8 +25,8 @@ export class View {
       this.btnPayment = document.querySelector('#btnPayment')
       this.closePopupBtn = document.querySelectorAll('#closePopup')
       this.basketItems = document.querySelector('#basketItems')
-      this.cartBtn = document.querySelector('#cartBtn')
-      if (this.cartBtn) this.cartBtn.addEventListener('click', this.onCheckCartData)
+      
+      
 
       this.userName = document.querySelector('#userName')
       this.userAddress = document.querySelector('#userAddress')
@@ -37,13 +37,13 @@ export class View {
       this.userAddressInput = document.querySelector('#userAddressInput')
       this.userCityInput = document.querySelector('#userCityInput')
       this.userPhoneInput = document.querySelector('#userPhoneInput')
-      // this.deliveryFormBtn = document.querySelector('#deliveryForm')
+
       this.placeOrderBtn = document.querySelector('#placeOrder')
       this.errorBtn = document.querySelector('#errorBtn')
       this.deliveryForm = document.querySelector('#deliveryForm')
       if (this.deliveryForm) this.deliveryForm.addEventListener('click', this.checkFormsToOrder)
       if (this.errorBtn) this.errorBtn.addEventListener('click', this._openDeliveryForm)
-      // if (this.deliveryFormBtn) this.deliveryFormBtn.addEventListener('click', this.deliveryForm)
+
       if (this.placeOrderBtn) this.placeOrderBtn.addEventListener('click', this.checkDataToOrder)
 
 
@@ -51,8 +51,6 @@ export class View {
       this.payCash = document.querySelector('#payCash')
       this.payFormBtn = document.querySelector('#payForm')
       if (this.payFormBtn) this.payFormBtn.addEventListener('click', this.payForm)
-
-      this.goodsList = document.querySelector('#cardsItems')
 
       if (this.btnAddress) this.btnAddress.addEventListener('click', this._openPopup)
       if (this.btnPayment) this.btnPayment.addEventListener('click', this._openPopup)
@@ -64,17 +62,6 @@ export class View {
          }
       }
    }
-
-   // deliveryForm = () => {
-   //    // console.log('view.deliveryForm')
-
-   //    const name = this.userNameInput.value
-   //    const address = this.userAddressInput.value
-   //    const city = this.userCityInput.value
-   //    const phone = this.userPhoneInput.value
-
-   //    this.onChangeDelivery(name, address, city, phone)
-   // }
 
    renderDelivery = (deliveryProps) => {
       // console.log('view.renderDelivery')
@@ -257,14 +244,19 @@ export class View {
    renderProducts = (listOfGoods) => {
       // console.log('view.renderProducts')
 
-      if (!this.goodsList) return
+      this.container = ''
 
-      this.goodsList.innerHTML = ''
+      let goodsList = document.createElement('ul')
+      goodsList.className = 'cards__items'
+      goodsList.setAttribute('id', 'cardsItems')
+      this.container.appendChild(goodsList)
+
+      goodsList.innerHTML = ''
       for (let i =0; i < listOfGoods.length; i++) {
          let product = document.createElement('li')
          product.className = 'card__item'
          product.setAttribute('id', i)
-         this.goodsList.appendChild(product)
+         goodsList.appendChild(product)
 
          let productImageWrap = document.createElement('a')
          productImageWrap.className = 'item__picture-wrap'
@@ -308,24 +300,77 @@ export class View {
          btnAddProductToCart.addEventListener('click', this._addProductToCart)
          productPriceWrap.appendChild(btnAddProductToCart)
       }
+
+      let orderSection = document.createElement('div')
+      orderSection.className = 'order__section'
+      this.container.appendChild(orderSection)
+
+      let cart = document.createElement('div')
+      cart.className = 'cart'
+      orderSection.appendChild(cart)
+
+      let miniCartTitle = document.createElement('p')
+      miniCartTitle.className = 'cart__title title'
+      miniCartTitle.innerHTML = 'Корзина'
+      cart.appendChild(miniCartTitle)
+
+      let cartItems = document.createElement('ul')
+      cartItems.className = 'cart__items'
+      cartItems.setAttribute('id', 'cartItems')
+      cart.appendChild(cartItems)
+
+      let cartBtnWrap = document.createElement('div')
+      cartBtnWrap.className = 'cart__btn_wrap'
+      cart.appendChild(cartBtnWrap)
+
+      let cartLink = document.createElement('div')
+      cartLink.className = 'btn cart__btn'
+      cartLink.addEventListener('click', this.onCheckCartData)
+      cartBtnWrap.appendChild(cartLink)
+
+      let cartBtnImage = document.createElement('div')
+      cartBtnImage.className = 'cart__btn_picture'
+      cartLink.appendChild(cartBtnImage)
+
+      let cartBtnText = document.createElement('p')
+      cartBtnText.className = '.cart__btn_text'
+      cartBtnText.innerHTML = 'Корзина'
+      cartLink.appendChild(cartBtnText)
+
+      let orders = document.createElement('div')
+      orders.className = 'orders'
+      cart.appendChild(orders)
+
+      let ordersTitle = document.createElement('p')
+      ordersTitle.className = 'orders__title title'
+      ordersTitle.innerHTML = 'Заказы'
+      orders.appendChild(ordersTitle)
+
+      let ordersItems = document.createElement('ul')
+      ordersItems.className = 'orders__items'
+      ordersItems.setAttribute('id', 'ordersItems')
+      orders.appendChild(ordersItems)
+
    }
 
    renderOrders = (orders) => {
       // console.log('view.renderOrders')
+
+      let ordersItems = document.querySelector('#ordersItems')
 
       if (!orders || orders.length < 1) {
          document.querySelector('.orders').style.display = 'none'
          return
       }
 
-      this.ordersItems.innerHTML = ''
+      ordersItems.innerHTML = ''
 
       orders.forEach(element => {
          let orderNumber = document.createElement('li')
          orderNumber.className = 'order__item'
          orderNumber.setAttribute('id', element.number)
          // orderNumber.innerHTML = `# ${element.number}`
-         this.ordersItems.appendChild(orderNumber)
+         ordersItems.appendChild(orderNumber)
          orderNumber.addEventListener('click', () => {this.onOrderFromFB(element.number)})
          let link = document.createElement('a')
          link.className = 'order__item'
@@ -336,12 +381,6 @@ export class View {
 
       // console.warn(orders)
    }
-
-   // onOrderFromFB = (id) => {
-   //    // console.log('view.onOrderFromFB')
-
-   //    this.(id)
-   // }
 
    renderCart = (cartLS) => {
       // console.log('view.renderCart', cartLS)
@@ -383,14 +422,14 @@ export class View {
    renderBigCart = (cartLS) => {
       // console.log('view.renderBigCart')
 
-      let container = document.querySelector('.container')
-      container.innerHTML = ''
+      this.container.innerHTML = ''
 
-      this.goodsList.innerHTML = ''
+      let goodsList = document.querySelector('#cardsItems')
+      goodsList.innerHTML = ''
 
       let content = document.createElement('div')
       content.className = 'content'
-      container.appendChild(content)
+      this.container.appendChild(content)
 
       let backBtnLink = document.createElement('a')
       backBtnLink.className = 'nav__link'
@@ -424,7 +463,7 @@ export class View {
 
       let orderSection = document.createElement('div')
       orderSection.className = 'order__section'
-      container.appendChild(orderSection)
+      this.container.appendChild(orderSection)
 
       let cart = document.createElement('div')
       cart.className = 'cart'
