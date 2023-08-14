@@ -42,21 +42,18 @@ export class Model {
          this.listOfGoods = listOfGoods;
          this.onOrdersFromData(ordersFromLS)
          this.orders = ordersFromLS;
+         if (cartHistoryLS !== null) {
+            localStorage.setItem('cart', JSON.stringify(cartHistoryLS))
+            this.cart = cartHistoryLS
+            this.onCart(cartHistoryLS)
+            localStorage.removeItem('cartHistory')
+         }
+         if (cartLS !== null) {
+            console.log('cartLS !== null', cartLS)
+            this.cart = cartLS
+            this.onCart(cartLS)
+         }
       })
-
-      if (cartHistoryLS !== null) {
-         localStorage.setItem('cart', JSON.stringify(cartHistoryLS))
-         this.cart = cartHistoryLS
-         this.onCart(cartHistoryLS)
-         localStorage.removeItem('cartHistory')
-      }
-      
-      if (cartLS !== null) {
-         console.log('cartLS !== null', cartLS)
-         this.cart = cartLS
-         this.onCart(cartLS)
-      }
-
    }
 
    readProductData() {
