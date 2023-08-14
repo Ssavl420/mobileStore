@@ -391,9 +391,10 @@ export class View {
       content.className = 'content'
       container.appendChild(content)
 
-      let backBtnLink = document.createElement('div')
+      let backBtnLink = document.createElement('a')
       backBtnLink.className = 'nav__link'
-      backBtnLink.addEventListener('click', this.onHome)
+      backBtnLink.setAttribute('src', '/mobileStore/')
+      // backBtnLink.addEventListener('click', this.onHome)
       content.appendChild(backBtnLink)
 
       let btnInnerImg = document.createElement('img')
