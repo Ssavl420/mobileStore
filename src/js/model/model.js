@@ -79,8 +79,8 @@ export class Model {
       })
    }
 
-   readCartData() {
-      // console.log('model.readCartData')
+   checkCartData() {
+      // console.log('model.checkCartData')
 
       const cartLS = JSON.parse(localStorage.getItem('cart'))
       
@@ -284,7 +284,7 @@ export class Model {
       
       localStorage.setItem('cart', JSON.stringify(this.cart))
       if (this.cart.length < 1) localStorage.removeItem('cart')
-      this.readCartData()
+      this.checkCartData()
       const cartLS = JSON.parse(localStorage.getItem('cart'))
       this.onChangeQuantity(cartLS)
    }
@@ -422,7 +422,7 @@ export class Model {
       this.onNewMovies(this.listOfGoods)
    }
 
-   checkData() {
+   checkDeliveryData() {
       // console.log('model.checkData')
 
       const deliveryData = JSON.parse(localStorage.getItem('delivery'))

@@ -30,8 +30,9 @@ export class Controller {
          onChangeMethodPay: this.handleChangeMethodPay,
          onChangeDelivery: this.handleDeliveryInfo,
          onCheckForms: this.handleCheckForms,
-         onCheckData: this.handleCheckData,
-         onOrderFromFB: this.handleOrderFromFB
+         onCheckDeliveryData: this.handleCheckDeliveryData,
+         onOrderFromFB: this.handleOrderFromFB,
+         onCheckCartData: this.handleCheckCartData
       });
    }
    init() {
@@ -42,7 +43,7 @@ export class Controller {
 
       if (activePage == '/mobileStore/product%D0%A1ard.html') this.model.readProductData()
 
-      if (activePage == '/mobileStore/shopping%D0%A1art.html') this.model.readCartData()
+      // if (activePage == '/mobileStore/shopping%D0%A1art.html') this.model.checkCartData()
 
       if (activePage == '/mobileStore/checkout.html') this.model.readCheckoutData()
 
@@ -159,10 +160,10 @@ export class Controller {
       this.view.renderOrderNumber(number)
    }
 
-   handleCheckData = () => {
+   handleCheckDeliveryData = () => {
       // console.log('controller.handleCheckData')
 
-      this.model.checkData()
+      this.model.checkDeliveryData()
    }
 
    handleCheckForms = (name, address, city, phone) => {
@@ -199,5 +200,10 @@ export class Controller {
       // console.log('controller.handleOrderFromFB')
 
       this.model.checkOrder(id)
+   }
+
+   handleCheckCartData = () => {
+
+      this.model.checkCartData()
    }
 }

@@ -1,7 +1,7 @@
 import { deliveryCost, activePage } from "../variables/variables.js"
 
 export class View {
-   constructor({ onReadProductData, onAddProductToCart, onPlusQuantity, onMinusQuantity, onChangeMethodPay, onChangeDelivery, onCheckForms, onCheckData, onOrderFromFB }) {
+   constructor({ onReadProductData, onAddProductToCart, onPlusQuantity, onMinusQuantity, onChangeMethodPay, onChangeDelivery, onCheckForms, onCheckDeliveryData, onOrderFromFB, onCheckCartData }) {
       this.onReadProductData = onReadProductData
       this.onAddProductToCart = onAddProductToCart
       this.onPlusQuantity = onPlusQuantity
@@ -9,7 +9,8 @@ export class View {
       this.onChangeMethodPay = onChangeMethodPay
       this.onChangeDelivery = onChangeDelivery
       this.onCheckForms = onCheckForms
-      this.onCheckData = onCheckData
+      this.onCheckDeliveryData = onCheckDeliveryData
+      this.onCheckCartData = onCheckCartData
       this.onOrderFromFB = onOrderFromFB
 
       this.popupWrap = document.querySelector('#popup__wrap')
@@ -25,6 +26,8 @@ export class View {
       this.basketItems = document.querySelector('#basketItems')
       this.cartSum = document.querySelector('#sum')
       this.costSum = document.querySelector('#costSum')
+      this.cartBtn = document.querySelector('#cartBtn')
+      if (this.cartBtn) this.cartBtn.addEventListener('click', this.onCheckCartData)
 
       this.userName = document.querySelector('#userName')
       this.userAddress = document.querySelector('#userAddress')
@@ -375,6 +378,103 @@ export class View {
    renderBigCart = (cartLS) => {
       // console.log('view.renderBigCart')
 
+      let container = document.querySelector('.container')
+      container.innerHTML = ''
+      let orders = document.querySelector('.orders')
+      orders.innerHTML = ''
+      this.goodsList.innerHTML = ''
+
+      let content = createElement('div')
+      content.className = 'content'
+      container.appendChild(content)
+
+      let backBtnLink = createElement('a')
+      backBtnLink.className = 'nav__link'
+      backBtnLink.setAttribute('href', '/mobileStore/')
+      content.appendChild(backBtnLink)
+
+      let btnInnerImg = createElement('img')
+      btnInnerImg.setAttribute('src', './arrow.f763e4ab.svg')
+      btnInnerImg.setAttribute('alt', 'arrow')
+      backBtnLink.appendChild(btnInnerImg)
+
+      let btnInnerText = createElement('p')
+      btnInnerText.className = 'nav__text'
+      btnInnerText.innerHTML = 'Список товаров'
+      backBtnLink.appendChild(btnInnerText)
+
+      let cartWrap = createElement('div')
+      cartWrap.className = 'cart__wrap'
+      content.appendChild(cartWrap)
+
+      let cartTitle = createElement('p')
+      cartTitle.className = 'cart__title'
+      cartTitle.innerHTML = 'Проверь корзину'
+      cartWrap.appendChild(cartTitle)
+
+      let basketItems = createElement('ul')
+      basketItems.className = 'basket__items'
+      basketItems.setAttribute('id', 'basketItems')
+      cartWrap.appendChild(basketItems)
+
+      let orderSection = createElement('div')
+      orderSection.className = 'order__section'
+      container.appendChild(orderSection)
+
+      let cart = createElement('div')
+      cart.className = 'cart'
+      orderSection.appendChild(cart)
+
+      let miniCartTitle = document.createElement('p')
+      miniCartTitle.className = 'cart__title title'
+      miniCartTitle.innerHTML = 'Корзина'
+      cart.appendChild(miniCartTitle)
+
+      let cartItems = document.createElement('ul')
+      cartItems.className = 'cart__items'
+      cartItems.setAttribute('id', 'cartItems')
+      cart.appendChild(cartItems)
+
+      let sumWrap = document.createElement('div')
+      sumWrap.className = 'sum__wrap'
+      cart.appendChild(sumWrap)
+
+      let sumText = document.createElement('span')
+      sumText.className = 'sum__text'
+      sumText.innerHTML = 'Сумма:'
+      sumWrap.appendChild(sumText)
+
+      let div = document.createElement('div')
+      sumWrap.appendChild(div)
+
+      let sum = document.createElement('span')
+      sum.className = 'sum'
+      sum.setAttribute('id', 'currency')
+      sum.innerHTML = '$'
+      div.appendChild(sum)
+
+      let span = document.createElement('span')
+      span.setAttribute('id', 'sum')
+      div.appendChild(span)
+
+      let cartBtnWrap = document.createElement('div')
+      cartBtnWrap.className = 'cart__btn_wrap'
+      cart.appendChild(cartBtnWrap)
+
+      let cartLink = document.createElement('a')
+      cartLink.className = 'btn cart__btn'
+      cartLink.setAttribute('href', '/mobileStore/checkout.html')
+      cartBtnWrap.appendChild(cartLink)
+
+      let cartBtnImage = document.createElement('div')
+      cartBtnImage.className = 'cart__btn_picture'
+      cartLink.appendChild(cartBtnImage)
+
+      let cartBtnText = document.createElement('p')
+      cartBtnText.className = '.cart__btn_text'
+      cartBtnText.innerHTML = 'Оформление'
+      cartLink.appendChild(cartBtnText)
+
       if (!cartLS || cartLS.length < 1) {
          console.error('Нет данных для рендера')
    
@@ -392,12 +492,12 @@ export class View {
          return
       }
 
-      this.basketItems.innerHTML = ''
+      basketItems.innerHTML = ''
 
       cartLS.forEach(element => {
          let item = document.createElement('li')
          item.className = 'basket__item cart'
-         this.basketItems.appendChild(item)
+         basketItems.appendChild(item)
 
          let itemImageWrap = document.createElement('div')
          itemImageWrap.className = 'item__image'
@@ -650,7 +750,7 @@ export class View {
    checkDataToOrder = () => {
       // console.log('view.checkDataToOrder')
 
-      this.onCheckData()
+      this.onCheckDeliveryData()
    }
 
    linkingToOrder = (link) => {
