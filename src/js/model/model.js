@@ -35,6 +35,10 @@ export class Model {
       const cartHistoryLS = JSON.parse(localStorage.getItem('cartHistory'))
       const ordersFromLS = JSON.parse(localStorage.getItem('orders'))
 
+      this.onOrdersFromData(ordersFromLS)
+      console.log(ordersFromLS)
+      this.orders = ordersFromLS;
+
       this.storage.pull().then((listOfGoods) => {
          this.onGoodsFromData(listOfGoods)
          this.listOfGoods = listOfGoods;
@@ -52,10 +56,6 @@ export class Model {
          this.cart = cartLS
          this.onCart(cartLS)
       }
-
-      this.onOrdersFromData(ordersFromLS)
-      console.log(ordersFromLS)
-      this.orders = ordersFromLS;
 
    }
 
