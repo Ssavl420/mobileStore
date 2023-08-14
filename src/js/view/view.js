@@ -387,40 +387,40 @@ export class View {
       content.className = 'content'
       container.appendChild(content)
 
-      let backBtnLink = createElement('a')
+      let backBtnLink = document.createElement('a')
       backBtnLink.className = 'nav__link'
       backBtnLink.setAttribute('href', '/mobileStore/')
       content.appendChild(backBtnLink)
 
-      let btnInnerImg = createElement('img')
+      let btnInnerImg = document.createElement('img')
       btnInnerImg.setAttribute('src', './arrow.f763e4ab.svg')
       btnInnerImg.setAttribute('alt', 'arrow')
       backBtnLink.appendChild(btnInnerImg)
 
-      let btnInnerText = createElement('p')
+      let btnInnerText = document.createElement('p')
       btnInnerText.className = 'nav__text'
       btnInnerText.innerHTML = 'Список товаров'
       backBtnLink.appendChild(btnInnerText)
 
-      let cartWrap = createElement('div')
+      let cartWrap = document.createElement('div')
       cartWrap.className = 'cart__wrap'
       content.appendChild(cartWrap)
 
-      let cartTitle = createElement('p')
+      let cartTitle = document.createElement('p')
       cartTitle.className = 'cart__title'
       cartTitle.innerHTML = 'Проверь корзину'
       cartWrap.appendChild(cartTitle)
 
-      let basketItems = createElement('ul')
+      let basketItems = document.createElement('ul')
       basketItems.className = 'basket__items'
       basketItems.setAttribute('id', 'basketItems')
       cartWrap.appendChild(basketItems)
 
-      let orderSection = createElement('div')
+      let orderSection = document.createElement('div')
       orderSection.className = 'order__section'
       container.appendChild(orderSection)
 
-      let cart = createElement('div')
+      let cart = document.createElement('div')
       cart.className = 'cart'
       orderSection.appendChild(cart)
 
