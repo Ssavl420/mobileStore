@@ -380,8 +380,7 @@ export class View {
 
       let container = document.querySelector('.container')
       container.innerHTML = ''
-      let orders = document.querySelector('.orders')
-      orders.innerHTML = ''
+
       this.goodsList.innerHTML = ''
 
       let content = createElement('div')
