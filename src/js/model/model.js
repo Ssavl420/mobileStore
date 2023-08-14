@@ -264,9 +264,10 @@ export class Model {
          }
       })
       localStorage.setItem('cart', JSON.stringify(this.cart))
-      this.onCartSum(this.calcCartSum())
+      
       const cartLS = JSON.parse(localStorage.getItem('cart'))
       this.onChangeQuantity(cartLS)
+      this.onCartSum(this.calcCartSum())
    }
 
    minusQuantityProduct(id) {

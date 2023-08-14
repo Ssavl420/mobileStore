@@ -495,6 +495,8 @@ export class View {
          return
       }
 
+      this.renderCart(cartLS)
+
       basketItems.innerHTML = ''
 
       cartLS.forEach(element => {
