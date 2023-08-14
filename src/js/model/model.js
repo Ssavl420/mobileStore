@@ -54,13 +54,9 @@ export class Model {
       })
 
       this.onOrdersFromData(ordersFromLS)
+      console.log(ordersFromLS)
       this.orders = ordersFromLS;
 
-      // this.storageOrder.pullOrder().then((orders) => {
-         
-      //    this.onOrdersFromData(orders)
-      //    this.orders = orders;
-      // })
    }
 
    readProductData() {

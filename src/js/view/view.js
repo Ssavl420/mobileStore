@@ -337,6 +337,15 @@ export class View {
       cartBtnText.innerHTML = 'Корзина'
       cartLink.appendChild(cartBtnText)
 
+   }
+
+   renderOrders = (orders) => {
+      // console.log('view.renderOrders')
+
+      let cart = document.querySelector('.cart')
+
+      if (!orders || orders.length < 1) return
+
       let orders = document.createElement('div')
       orders.className = 'orders'
       cart.appendChild(orders)
@@ -350,18 +359,6 @@ export class View {
       ordersItems.className = 'orders__items'
       ordersItems.setAttribute('id', 'ordersItems')
       orders.appendChild(ordersItems)
-
-   }
-
-   renderOrders = (orders) => {
-      // console.log('view.renderOrders')
-
-      let ordersItems = document.querySelector('#ordersItems')
-
-      if (!orders || orders.length < 1) {
-         document.querySelector('.orders').style.display = 'none'
-         return
-      }
 
       ordersItems.innerHTML = ''
 
@@ -430,8 +427,8 @@ export class View {
 
       let backBtnLink = document.createElement('a')
       backBtnLink.className = 'nav__link'
-      backBtnLink.setAttribute('src', '/mobileStore/')
-      // backBtnLink.addEventListener('click', this.onHome)
+      // backBtnLink.setAttribute('src', '/mobileStore/')
+      backBtnLink.addEventListener('click', this.onHome)
       content.appendChild(backBtnLink)
 
       let btnInnerImg = document.createElement('img')
