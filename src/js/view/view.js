@@ -244,7 +244,7 @@ export class View {
    renderProducts = (listOfGoods) => {
       // console.log('view.renderProducts')
 
-      this.container = ''
+      this.container.innerHTML = ''
 
       let goodsList = document.createElement('ul')
       goodsList.className = 'cards__items'
