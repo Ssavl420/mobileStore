@@ -383,7 +383,7 @@ export class View {
 
       this.goodsList.innerHTML = ''
 
-      let content = createElement('div')
+      let content = document.createElement('div')
       content.className = 'content'
       container.appendChild(content)
 
