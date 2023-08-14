@@ -346,19 +346,19 @@ export class View {
 
       if (!orders || orders.length < 1) return
 
-      let orders = document.createElement('div')
-      orders.className = 'orders'
-      cart.appendChild(orders)
+      let ordersList = document.createElement('div')
+      ordersList.className = 'orders'
+      cart.appendChild(ordersList)
 
       let ordersTitle = document.createElement('p')
       ordersTitle.className = 'orders__title title'
       ordersTitle.innerHTML = 'Заказы'
-      orders.appendChild(ordersTitle)
+      ordersList.appendChild(ordersTitle)
 
       let ordersItems = document.createElement('ul')
       ordersItems.className = 'orders__items'
       ordersItems.setAttribute('id', 'ordersItems')
-      orders.appendChild(ordersItems)
+      ordersList.appendChild(ordersItems)
 
       ordersItems.innerHTML = ''
 
