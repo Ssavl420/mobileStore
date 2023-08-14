@@ -424,9 +424,6 @@ export class View {
 
       this.container.innerHTML = ''
 
-      let goodsList = document.querySelector('#cardsItems')
-      goodsList.innerHTML = ''
-
       let content = document.createElement('div')
       content.className = 'content'
       this.container.appendChild(content)
