@@ -340,7 +340,7 @@ export class View {
    }
 
    renderOrders = (orders) => {
-      // console.log('view.renderOrders')
+      console.log('view.renderOrders', orders)
 
       let cart = document.querySelector('.cart')
 
