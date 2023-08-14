@@ -447,7 +447,7 @@ export class Model {
       }
       this.createDeliveryProps(name, address, city, phone)
       this.readDeliveryProps()
-      this.checkData()
+      // this.checkData()
    }
 
    validation(name, address, city, phone) {
