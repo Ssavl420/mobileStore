@@ -24,8 +24,6 @@ export class View {
       this.btnPayment = document.querySelector('#btnPayment')
       this.closePopupBtn = document.querySelectorAll('#closePopup')
       this.basketItems = document.querySelector('#basketItems')
-      this.cartSum = document.querySelector('#sum')
-      this.costSum = document.querySelector('#costSum')
       this.cartBtn = document.querySelector('#cartBtn')
       if (this.cartBtn) this.cartBtn.addEventListener('click', this.onCheckCartData)
 
@@ -364,15 +362,19 @@ export class View {
    renderCartSum = (cartSum) => {
       // console.log('view.renderCartSum')
 
-      this.cartSum.innerHTML = `${cartSum}`
+      let cartSum = document.querySelector('#sum')
+
+      cartSum.innerHTML = `${cartSum}`
    }
 
    renderCartCheckoutSum = (sum) => {
       // console.log('view.renderCartCheckoutSum')
 
+      let costSum = document.querySelector('#costSum')
+
       document.querySelector('#deliveryCost').innerHTML = `${deliveryCost}`
 
-      this.costSum.innerHTML = `${sum}`
+      costSum.innerHTML = `${sum}`
    }
 
    renderBigCart = (cartLS) => {
